@@ -21,3 +21,29 @@ Loguea un usuario con la contraseña sin encriptar, es decir, usa la contraseña
 Pasa por un middleware para compruebar si el token del usuario es válido.
 ##### Headers
 * ``Authorization``: *Bearer eGciO...*.
+
+## Usuario
+### Obtener un usuario por id
+``GET /user/:id``
+##### Request param
+* ``id``: id del usuario.
+
+### Obtener todos los usuarios
+``GET /user``
+
+### Borrar un usuario por id
+``DELETE /user/:id``
+##### Request param
+* ``id``: id del usuario.
+
+### Borrar todos los usuarios
+``DELETE /user``
+
+### Acctualizar usuario
+``PUT /user/:id``  
+Solo se pueden actualizar los campos *description* y *avatar* del usuario.
+##### Request param
+* ``id``: id del usuario.
+##### Body
+* ``description``.
+* ``avatar``.
