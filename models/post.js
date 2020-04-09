@@ -8,8 +8,8 @@ const userSchema = new Schema(
     title: { type: String, trim: true, lowercase: true, required: true },
     content: { type: String, required: true },
     dateCreation: { type: String, default: `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}` },
-    image: { type: String, trim: true, required: true }, // put default image
-    likes: { type: Number, default: 0 },
+    image: { type: String, trim: true, required: true }, // @TODO: put default image
+    views: { type: Number, default: 0 },
     idUser: { type: mongoose.Types.ObjectId, ref: 'User' },
     category: [
       {

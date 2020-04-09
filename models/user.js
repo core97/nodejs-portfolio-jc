@@ -5,10 +5,10 @@ const { Schema } = mongoose;
 const userSchema = new Schema(
   {
     name: { type: String, trim: true, lowercase: true, required: true },
-    username: { type: String, trim: true, required: true },
+    email: { type: String, trim: true, required: true },
     password: { type: String, trim: true, required: true },
-    description: { type: String, trim: true, required: true }, // put Lorem ipsum like default
-    avatar: { type: String, trim: true, required: true }, // put default image
+    description: { type: String, trim: true, required: true }, // Lorem ipsum like default
+    avatar: { type: String, trim: true, required: true }, // @TODO: put default image
   },
   {
     toJSON: {
