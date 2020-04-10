@@ -1,5 +1,5 @@
 const passport = require('passport');
-const User = require('../models/user');
+const User = require('../models/User');
 
 const login = (req, res, next) => {
   passport.authenticate('login', async (err, token) => {

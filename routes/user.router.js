@@ -1,22 +1,23 @@
 const express = require('express');
 
 const userController = require('../controllers/user.controller');
+const { isAuthenticated } = require('../middlewares/isAuthenticated');
 
 const router = express.Router();
 
 // http://localhost:8080/user
-router.get('/', userController.getAllUser);
+router.get('/', [isAuthenticated], userController.getAllUser);
 
 // http://localhost:8080/user/:id
-router.get('/:id', userController.getUserById);
+router.get('/:id', [isAuthenticated], userController.getUserById);
 
 // http://localhost:8080/user
-router.delete('/', userController.deleteAllUsers);
+// router.delete('/', [isAuthenticated], userController.deleteAllUsers);
 
 // http://localhost:8080/user/:id
-router.delete('/:id', userController.deleteUser);
+router.delete('/:id', [isAuthenticated], userController.deleteUser);
 
 // http://localhost:8080/user/:id
-router.put('/:id', userController.updateUser);
+router.put('/:id', [isAuthenticated], userController.updateUser);
 
 module.exports = router;

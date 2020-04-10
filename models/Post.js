@@ -3,14 +3,15 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const today = new Date();
 
-const userSchema = new Schema(
+const postSchema = new Schema(
   {
     title: { type: String, trim: true, lowercase: true, required: true },
     content: { type: String, required: true },
+    summary: {type: String, required: true },
     dateCreation: { type: String, default: `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}` },
     image: { type: String, trim: true, required: true }, // @TODO: put default image
     views: { type: Number, default: 0 },
-    idUser: { type: mongoose.Types.ObjectId, ref: 'User' },
+    user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     category: [
       {
         type: String,
@@ -47,5 +48,5 @@ const userSchema = new Schema(
   }
 );
 
-const User = mongoose.model('Post', userSchema);
-module.exports = User;
+const Post = mongoose.model('Post', postSchema);
+module.exports = Post;

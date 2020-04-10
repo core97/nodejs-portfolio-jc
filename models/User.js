@@ -29,10 +29,10 @@ const userSchema = new Schema(
   }
 );
 
-userSchema.virtual('userId', {
+userSchema.virtual('ownerPost', {
   ref: 'Post',
   localField: '_id',
-  foreignField: 'userId',
+  foreignField: 'user',
 });
 
 const User = mongoose.model('User', userSchema);
