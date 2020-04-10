@@ -87,7 +87,7 @@ Solo se pueden actualizar los campos *description* y *avatar* del usuario.
 ##### Headers
 * ``Authorization``: *Bearer eGciO...*.
 
-### Actualizar usuario
+### Actualizar post
 ``PUT /user/:id``  
 Solo se pueden actualizar los campos *title*, *content*, *summary*, *image* y *category* del post.
 ##### Request param
